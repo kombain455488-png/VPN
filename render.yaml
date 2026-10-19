@@ -1,0 +1,33 @@
+﻿services:
+  - type: web
+    name: vpn-server-manager
+    runtime: node
+    plan: free
+
+    buildCommand: npm install
+    startCommand: npm start
+
+    envVars:
+      - key: NODE_VERSION
+        value: 24
+
+      - key: PORT
+        value: 10000
+
+      - key: DATABASE_URL
+        sync: false
+
+      - key: ADMIN_KEY
+        sync: false
+
+      - key: HY2_HOST
+        sync: false
+
+      - key: HY2_PORT
+        value: 443
+
+      - key: HY2_AUTH
+        sync: false
+
+      - key: SUBSCRIPTION_NAME
+        value: My VPN
